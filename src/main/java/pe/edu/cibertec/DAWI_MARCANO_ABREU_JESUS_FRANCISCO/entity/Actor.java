@@ -22,6 +22,6 @@ public class Actor {
     @Column(nullable = false)
     private String lastName;
 
-    @OneToMany(mappedBy = "actor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "actor", cascade = {CascadeType.REMOVE, CascadeType.PERSIST}, orphanRemoval = true)
     private List<FilmActor> filmActors;
 }

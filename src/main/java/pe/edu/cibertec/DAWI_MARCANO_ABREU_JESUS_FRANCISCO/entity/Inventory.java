@@ -15,7 +15,7 @@ public class Inventory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer inventoryId;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
     @JoinColumn(name = "film_id", nullable = false)
     private Film film;
 

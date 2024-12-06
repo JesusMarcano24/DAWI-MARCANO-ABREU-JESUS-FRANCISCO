@@ -116,14 +116,14 @@ public class MaintenanceServiceImpl implements MaintenanceService {
             filmRepository.save(film);
             return true;
         }
-        return false;  // Si no se encuentra el idioma, se retorna falso
+        return false;
     }
 
     @Override
     public Boolean deleteFilm(int id) {
         Optional<Film> film = filmRepository.findById(id);
         if (film.isPresent()) {
-            filmRepository.delete(film.get());  // Eliminará el Film y sus relaciones en cascada
+            filmRepository.delete(film.get());
             return true;
         }
         return false;
